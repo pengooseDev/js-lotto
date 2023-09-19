@@ -1,6 +1,6 @@
 import { NUMBER } from '../constants';
 import { LottoStore } from '../Model';
-import { checkPrize } from '../utils';
+import { checkLottoPrize } from '../utils';
 
 /**
  * 로또의 판매 및 Ticket 결과를 확인하는 객체입니다.
@@ -35,7 +35,7 @@ export class LottoCorporation {
       winningNumbers
     );
 
-    const prize = checkPrize(matchingCount, isBonusMatched);
+    const prize = checkLottoPrize(matchingCount, isBonusMatched);
 
     return { matchingCount, isBonusMatched, prize };
   }
