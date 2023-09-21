@@ -1,11 +1,12 @@
 import { isPositiveNumber } from '.';
 import { MESSAGE, RESTART_INPUT, NUMBER } from '../../constants';
 import { isLottoNumber, isNumbersUnique } from './';
+import { WebErrorHandler } from '../../Model';
 
 const EMPTY_INPUT = '';
 
 /* View */
-export const View = {
+export const View = WebErrorHandler.errorProxy({
   readUserInput(value) {
     if (value === EMPTY_INPUT) throw new Error(MESSAGE.ERROR.EMPTY_STRING);
   },
@@ -60,4 +61,4 @@ export const View = {
       throw new Error(MESSAGE.ERROR.INVALID_RESTART_INPUT);
     }
   },
-};
+});

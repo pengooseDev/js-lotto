@@ -19,9 +19,7 @@ export class LottoEvents {
       lottoNumbers.forEach(($element) => {
         const { checked } = event.target;
 
-        if (checked) return ($element.style.display = 'block');
-
-        return ($element.style.display = 'none');
+        $element.style.display = checked ? 'block' : 'none';
       });
     });
   }
